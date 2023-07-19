@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Fake News Detection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" id="webview">
+    <link rel="stylesheet" href="{{ url_for('static', filename='websitecss.css') }}">
+</head>
+<div>
+    <img id="left" src="{{ url_for('static', filename='img.png')}}" width="40" Align="left">
+    <p><b>FakeNewsDetector</b></p>
+    <h1>IS THIS NEWS REAL OR FAKE? </h1>
+    </head>
+
+    <body>
+        <center>
+            <div>
+        <section>
+            <center>
+            <p id="first"> Paste Your Text News Link</p>
+        </center>
+        </section>
+    </div>
+        <div>
+            <form action="{{ url_for('predict')}}" method="post">
+                <input type="text" name = "url" id="pastelink" placeholder="paste your link here.....">
+                <button type="submit" id="button" class="btn btn-success">SUBMIT</button>
+            </form>
+            <br><br>
+            <h2>{{ prediction_text }}</h2>
+        </div>
+        <div>
+
+            <h3 id="fakenews">What is fake news?</h3>
+        <center><p id="para">
+Fake news is an inaccurate, sometimes sensationalistic report that is created 
+to gain attention, mislead,deceive or damage a reputation. Unlike misinformation,
+which is inaccurate because a reporter has confused facts, fake news is created with 
+the intent to manipulate someone or something. Fake news can spread quickly when 
+it provides disinformation that is aligned with the audience's point of view because
+such content is not likely to be questioned or discounted.
+
+In recent years, the internet has provided a low-cost distribution channel for fake news.
+Posting fake news in discussion forums, website comment fields, blogs and social media 
+websites requires little, if any, technical know-how. Social media websites in particular
+have proved to be an easy venue for distributing fake news. Bogus stories can be tweeted 
+or posted from a mobile smartphone and quickly distributed to a large audience through 
+retweets and sharing.
+
+Although some creators and distributors of fake news have political or social agendas, others
+are more entrepreneurial, using fake news that appeals to recipients on an emotional level to 
+make money from digital advertising placed around the content. When fake news is used to spread 
+propaganda, it can be  dangerous. In addition to shaping public opinion and behavior, it can also 
+cause mistrust, encourage dissent and deflect attention from real news.
+
+In response to criticism about failing to curb the distribution of fake news during the 2016
+presidential election in the United States, Facebook and Google have taken steps to crack down on
+disinformation. They have formed a coalition called First Draft and are working with major media
+outlets to educate Internet users about how to spot fake news. They are also working with third 
+parties to create independent fact-checking websites and are exploring ways to identify and label 
+news stories that can not be verified, much like the way Wikipedia editors label entries they feel 
+should be questioned.
+
+On the internet, news that is created with the intent to deceive often has poor grammar and misspelled
+words; it may use racial language or have an excessive number of capital letters and exclamation points.
+To verify the accuracy of a news story, it can be useful to query a search engine in order to confirm
+that legitimate, traditional news sources are also covering the story; fake news stories often have only
+one source. Another strategy for identifying fake news is to check the host site's domain name and URL.
+Often, fake news will appear to have a legitimate-sounding domain name, but will have a URL that ends in
+.com.co or another unusual suffix. </p>
+</center></center>
+        </div>
+</div>
+
+</body>
+
+</html>
